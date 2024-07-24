@@ -1,0 +1,61 @@
+
+import kotlin.String;
+import kotlin.collections.List;
+
+---------------------------------------------------------------------------------------------------- UserToken
+CREATE TABLE UserToken(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    token TEXT,
+    user TEXT,
+    password TEXT
+);
+insertUserToken:
+INSERT INTO UserToken(id, token,user, password) VALUES (?,?,?,?);
+removeAllUserToken:
+DELETE FROM UserToken;
+selectAllUserToken:
+SELECT * FROM UserToken;
+---------------------------------------------------------------------------------------------------- UserToken
+
+
+---------------------------------------------------------------------------------------------------- UserPermission
+CREATE TABLE UserPermission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    permission TEXT
+);
+insertUserPermission:
+INSERT INTO UserPermission(id, permission) VALUES (?,?);
+removeAllUserPermission:
+DELETE FROM UserPermission;
+selectAllUserPermission:
+SELECT * FROM UserPermission;
+---------------------------------------------------------------------------------------------------- UserPermission
+
+
+---------------------------------------------------------------------------------------------------- UserInfo
+CREATE TABLE UserInfo(
+    id INTEGER,
+    userName TEXT,
+    fullName TEXT,
+    personnelNumber TEXT,
+    personnelJobKeyCode TEXT,
+    personnelJobKeyText TEXT,
+    companyCode TEXT,
+    companyName TEXT,
+    organizationUnit TEXT,
+    phone TEXT,
+    email TEXT,
+    mobile TEXT,
+    userType TEXT,
+    pelak TEXT,
+    carModel TEXT,
+    roles TEXT AS List<String> NOT NULL
+);
+insertUserInfo:
+INSERT INTO UserInfo(id, userName, fullName, personnelNumber, personnelJobKeyCode, personnelJobKeyText, companyCode, companyName, organizationUnit, phone, email, mobile, userType, pelak, carModel, roles)
+VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+removeAllUserInfo:
+DELETE FROM UserInfo;
+selectAllUserInfo:
+SELECT * FROM UserInfo;
+---------------------------------------------------------------------------------------------------- UserInfo
